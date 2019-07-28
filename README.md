@@ -16,10 +16,20 @@ I wrote this notebook in [Google Colab](https://colab.research.google.com). It c
 ### Keras
 Keras is a high-level neural networks API that is built on a TensorFlow backend. You sacrifice a little control, but it makes it a lot easier to start working with neural networks at a basic level. The *ImageDataGenerator* class made data wrangling and augmentation as simple as dumping images of each class into its own folder.
 
+# Results
+I trained the network to recognize 3 characters from the show One Piece: Luffy, Zoro, and Sanji. After training for 50 epochs on under 300 images, the classifier achieved accuracy of about 90%.
+Looking at the sample output below, we see that it correctly identified Luffy every time, but occasionally misclassified Zoro and Sanji as Luffy. I found it particularly interesting that it correctly identified Luffy and Zoro's logos. They aren't pictures of the characters themselves, but because they exhibit characteristics of the characters the classifier was still able to identify them. It misclassified Sanji's logo as Luffy, which I suspect can be attributed to the lack of identifiable color in Sanji's logo. Where Luffy and Zoro's logos include their respective red and green colors, Sanji's logo doesn't showcase his easily identifiable yellow hair.
+
+![](output.png)
+
+Overall, this is pretty solid accuracy for a limited training set. Moving forward it'd be interesting to see what I can do with problems where I have more data and am working with more than 3 classes!
+
 # Dependencies
 
 To run the notebook you'll have to change paths to where you have the data stored.
 
 [Keras](https://keras.io) and [Tensorflow](https://www.tensorflow.org) - Neural network training
+
 [Numpy](https://numpy.org) - Math
+
 [Matplotlib](https://matplotlib.org) - Displaying images
